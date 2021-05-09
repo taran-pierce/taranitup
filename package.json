@@ -1,33 +1,19 @@
 {
-  "name": "jump-start",
-  "version": "1.1.0",
-  "description": "Quick start to getting a project going.",
-  "main": "app/index.html",
+  "name": "taranitup",
+  "version": "0.0.1",
+  "description": "Recipe book",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taran-pierce/jump-start.git"
+    "url": "git+https://github.com/taran-pierce/taranitup.git"
   },
   "author": "Taran Pierce",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/taran-pierce/jump-start/issues"
+    "url": "https://github.com/taran-pierce/taranitup/issues"
   },
-  "homepage": "https://github.com/taran-pierce/jump-start#readme",
-  "devDependencies": {
-    "browser-sync": "^2.18.12",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-cache": "^0.4.6",
-    "gulp-connect-php": "^1.0.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-useref": "^3.1.2",
-    "run-sequence": "^2.0.0"
-  }
+  "homepage": "https://github.com/taran-pierce/taranitup#readme"
 }
