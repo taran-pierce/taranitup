@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.container {
+  background: red;
+  padding: $layout-spacing-xs;
+}
+
+.containerFluid {
+  background: blue;
+}
