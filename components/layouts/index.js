@@ -14,6 +14,8 @@ export default function Layout({
 
   const { pathname } = useRouter();
 
+  const canonical = `http://www.taranitup.com${pathname}`;
+
   // setup GTM and add pageId from router to dataLayer
   useEffect(() => {
     const tagManagerArgs = {
@@ -30,7 +32,7 @@ export default function Layout({
     <>
       <Head>
         <title>{title} - taranitup.com</title>
-        <link rel="canonical" href={pathname} />
+        <link rel="canonical" href={canonical} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="Taran Pierce aka William Taran Pierce, personal website for testing fun stuff." />

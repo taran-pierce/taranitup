@@ -35,6 +35,11 @@ export default function Index() {
               <li>S3</li>
               <li>CodeBuild</li>
             </ul>
+            <h3>Google Analytics - <a href={`https://analytics.google.com/`} target={`_blank`} rel={`noopener`}>https://analytics.google.com/</a></h3>
+            <ul>
+              <li>Google Analytics</li>
+              <li>Google Tag Manager</li>
+            </ul>
           </Container>
         </section>
      </Layout>
