@@ -6,7 +6,9 @@ export default function Index() {
 
   return (
     <>
-     <Layout>
+     <Layout 
+       title={`Home`}
+      >
        <Text 
          content={`Taran Pierce`} 
          markup={`h1`}
