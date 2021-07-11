@@ -27,6 +27,9 @@ export default function Index() {
           content={`Also hooked up GTM using react-gtm-module. Really easy to use and setup.`}
         />
         <Text
+          content={`On merges to master the code is automatically built and deployed to update the live site.`}
+        />
+        <Text
           content={`I will be hooking up more things as I get time!`}
         />
      </Layout>
