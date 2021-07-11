@@ -18,7 +18,7 @@ export default function Index() {
           content={`Just a place for me to do some messing around with stuff. This site is hooked up to various technologies and I will explain how each of them are hooked up.`}
         />
         <Text
-          content={`Right now this site is using Static Site Generation from Next.js.`}
+          content={`Right now this site is using Static Site Generation from Next.js and being hosted through AWS using CodeBuild and Route 53.`}
         />
      </Layout>
     </>
