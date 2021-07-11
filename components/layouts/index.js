@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import styles from './layout.module.scss';
 
 // using GTM for analytics
 import TagManager from 'react-gtm-module';
 
-export default function Layout({children}) {
+export default function Layout({
+    children,
+    title,
+  }) {
+
+  const { pathname } = useRouter();
 
   // setup GTM and add pageId from router to dataLayer
   useEffect(() => {
-    const { pathname } = useRouter();
     const tagManagerArgs = {
       gtmId: 'G-NJGEK61WEJ',
       dataLayer: {
@@ -22,6 +27,13 @@ export default function Layout({children}) {
 
   return (
     <>
+      <Head>
+        <title>{title} - taranitup.com</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="Taran Pierce aka William Taran Pierce, personal website for testing fun stuff." />
+        <meta name="keywords" content="Taran Pierce, Nodejs, Nextjs, AWS, CodeBuild, Route 53, S3" />
+      </Head>
       <main className={styles.container}>
         {children}
       </main>
