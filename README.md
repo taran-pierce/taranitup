@@ -23,3 +23,4 @@ A personal project for Taran Pierce to test out new things.
 - Hook up headless CMS
 - Set up CloudFront
 - Set up https after setting up CloudFront
+- Set up caching
