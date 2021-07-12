@@ -37,6 +37,9 @@ export default function Index() {
             content={`On merges to master the code is automatically built and deployed to update the live site.`}
           />
           <Text
+            content={`Also have Cloud Front set up in order to get an SSL. Need to customize the caching to work properly now.`}
+          />
+          <Text
             content={`I will be hooking up more things as I get time!`}
           />
          </Container>
