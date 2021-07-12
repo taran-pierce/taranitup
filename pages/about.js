@@ -34,6 +34,7 @@ export default function Index() {
               <li>Route 53</li>
               <li>S3</li>
               <li>CodeBuild</li>
+              <li>Cloud Front</li>
             </ul>
             <h3>Google Analytics - <a href={`https://analytics.google.com/`} target={`_blank`} rel={`noopener`}>https://analytics.google.com/</a></h3>
             <ul>
