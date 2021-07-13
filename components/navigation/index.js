@@ -5,9 +5,17 @@ import styles from './navigation.module.scss';
 export default function Navigation({activePage}) {
   const links = [
     {
-      name: 'About',
+      name: 'about',
       href: '/about',
-    }
+    },
+    {
+      name: 'aws',
+      href: '/aws',
+    },
+    {
+      name: 'nextjs',
+      href: '/nextjs',
+    },
   ];
 
   return (

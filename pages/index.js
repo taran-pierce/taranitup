@@ -40,6 +40,9 @@ export default function Index() {
             content={`Also have Cloud Front set up in order to get an SSL. Need to customize the caching to work properly now.`}
           />
           <Text
+            content={`Added a command to CodeBuild to automatically queue up an invalidation task for Cloud Front.`}
+          />
+          <Text
             content={`I will be hooking up more things as I get time!`}
           />
          </Container>

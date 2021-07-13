@@ -3,7 +3,7 @@ import Layout from '../components/layouts';
 import Text from '../components/text';
 import Container from '../components/container';
 
-export default function Index() {
+export default function About() {
 
   return (
     <>
