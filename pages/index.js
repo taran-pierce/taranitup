@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layouts';
 import Text from '../components/text';
 import Container from '../components/container';
+import AppImage from '../components/image';
 
 export default function Index() {
 
@@ -12,14 +13,36 @@ export default function Index() {
       >
         <section>
           <Container>
-            <Text 
-              content={`Taran Pierce`} 
-              markup={`h1`}
-            />
-            <Text
-              content={`Welcome to taranitup.com`}
-              markup={`h2`}
-            />
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column-reverse',
+            }}>
+              <div style={{
+              }}>
+                <Text
+                  markup={`h1`}
+                  content={`Taran Pierce`} 
+                />
+                <Text
+                  markup={`h2`}
+                  content={`Welcome to taranitup.com`}
+                />
+              </div>
+              <div style={{
+                // margin: '0 auto',
+              }}>
+                <AppImage 
+                  imageName={'taranitup/taran.jpg'}
+                  options={{
+                    crop: 'scale',
+                    fetchFormat: 'auto',
+                    height: '260',
+                    width: '260',
+                    radius: 'max',
+                  }}
+                />
+              </div>
+            </div>
           </Container>
         </section>
        <section>
@@ -41,6 +64,9 @@ export default function Index() {
           />
           <Text
             content={`Added a command to CodeBuild to automatically queue up an invalidation task for Cloud Front.`}
+          />
+          <Text
+            content={`Now hooked up to Cloudinary to get media from a CDN.`}
           />
           <Text
             content={`I will be hooking up more things as I get time!`}
