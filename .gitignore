@@ -5,3 +5,4 @@ dist/
 .swo
 out/
 .next/
+.env.local
