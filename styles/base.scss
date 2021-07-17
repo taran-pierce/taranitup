@@ -1,6 +1,13 @@
+@import "./typography";
+
+:root {
+  font-size: 62.5%;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 
   * {
     box-sizing: border-box;
@@ -13,6 +20,25 @@ h5, h6,
 p, ul,
 ol, a {
   margin: 0 0 .5rem 0;
+}
+
+h1, h2 {
+  font-family: 'Zilla Slab', serif;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+p, a, ol, ul, li {
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 section {
