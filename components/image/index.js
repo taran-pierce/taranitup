@@ -6,9 +6,14 @@ import {
  } from 'cloudinary-react';
  import styles from './image.module.scss';
 
-export default function AppImage({ imageName, options, cloudName }) {
+export default function AppImage({ imageName, options, cloudName, alt }) {
 
   const version = process.env.CLOUDINARY_VERSION;
+
+  const {
+    height,
+    width,
+  } = options || {};
 
   return (
     <>
@@ -19,8 +24,11 @@ export default function AppImage({ imageName, options, cloudName }) {
           version={version} 
           publicId={imageName}
           className={styles.img}
+          height={height}
+          width={width}
+          alt={alt}
         >
-          {options && <Transformation {...options} />}
+          {options && options.map( option => <Transformation {...option} />)}
         </Image>
       </CloudinaryContext>
     </>
