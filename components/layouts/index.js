@@ -39,6 +39,8 @@ export default function Layout({
         <meta name="Author" content="Taran Pierce" />
         <meta name="description" content="Taran Pierce aka William Taran Pierce, personal website for testing fun stuff." />
         <meta name="keywords" content="Taran Pierce, Nodejs, Nextjs, AWS, CodeBuild, Route 53, S3" />
+        <link rel="preconnect" href="//res.cloudinary.com" />
+        <link rel="dns-prefetch" href="//res.cloudinary.com" />
       </Head>
       <Header />
       <main className={styles.container}>

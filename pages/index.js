@@ -28,19 +28,28 @@ export default function Index() {
                   content={`Welcome to taranitup.com`}
                 />
               </div>
-              <div style={{
-                // margin: '0 auto',
-              }}>
+              <div>
                 <AppImage 
                   imageName={'taranitup/taran.jpg'}
                   cloudName={'tpierce36'}
-                  options={{
-                    crop: 'scale',
-                    fetchFormat: 'auto',
-                    height: '260',
-                    width: '260',
-                    radius: 'max',
-                  }}
+                  options={[
+                    {
+                      crop: 'scale',
+                      height: '280',
+                      width: '280',
+                      fetchFormat: 'auto',
+                    },
+                    {
+                      crop: 'crop',
+                      gravity: 'face',
+                      radius: 'max',
+                    },
+                    {
+                      effect: 'outline:2',
+                      color: 'black',
+                    }
+                  ]}
+                  alt={'Taran Pierce'}
                 />
               </div>
             </div>
