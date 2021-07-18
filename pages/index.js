@@ -50,6 +50,8 @@ export default function Index() {
                     }
                   ]}
                   alt={'Taran Pierce'}
+                  height={280}
+                  width={280}
                 />
               </div>
             </div>
