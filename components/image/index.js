@@ -6,14 +6,8 @@ import {
  } from 'cloudinary-react';
  import styles from './image.module.scss';
 
-export default function AppImage({ imageName, options, cloudName, alt }) {
-
+export default function AppImage({ imageName, options, cloudName, alt, height, width }) {
   const version = process.env.CLOUDINARY_VERSION;
-
-  const {
-    height,
-    width,
-  } = options || {};
 
   return (
     <>
