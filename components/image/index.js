@@ -6,11 +6,9 @@ import {
  } from 'cloudinary-react';
  import styles from './image.module.scss';
 
- // get cloudName and version for CDN
-const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
-const version = process.env.CLOUDINARY_VERSION;
+export default function AppImage({ imageName, options, cloudName }) {
 
-export default function AppImage({ imageName, options }) {
+  const version = process.env.CLOUDINARY_VERSION;
 
   return (
     <>

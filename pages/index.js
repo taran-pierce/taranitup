@@ -33,6 +33,7 @@ export default function Index() {
               }}>
                 <AppImage 
                   imageName={'taranitup/taran.jpg'}
+                  cloudName={'tpierce36'}
                   options={{
                     crop: 'scale',
                     fetchFormat: 'auto',
