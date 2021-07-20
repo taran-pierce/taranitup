@@ -16,6 +16,10 @@ export default function Navigation({activePage}) {
       name: 'nextjs',
       href: '/nextjs',
     },
+    {
+      name: 'cloudinary',
+      href: '/cloudinary',
+    },
   ];
 
   return (
