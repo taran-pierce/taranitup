@@ -21,14 +21,17 @@ export default function AppImage({
   const [isProd, setIsProd] = useState(false);
 
   useEffect(() => {
-    setIsProd(window && window.location.hostname.match('www') || false);
+    const hasWWW = window && window.location.hostname.match('www').length >= 1 || false;
+
+    setIsProd(hasWWW);
+
+    console.log({hasWWW});
   }, []);
 
   return (
     <>
       <CloudinaryContext 
         cloudName={cloudName}
-        secureDistribution={true}
       >
         <Image 
           version={version} 
