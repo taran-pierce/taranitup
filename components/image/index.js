@@ -21,11 +21,9 @@ export default function AppImage({
   const [isProd, setIsProd] = useState(false);
 
   useEffect(() => {
-    const hasWWW = window && window.location.hostname.match('www').length >= 1 || false;
+    const isProduction = process.env.NODE_ENV === 'production';
 
-    setIsProd(hasWWW);
-
-    console.log({hasWWW});
+    setIsProd(isProduction);
   }, []);
 
   return (
