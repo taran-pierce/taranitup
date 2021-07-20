@@ -1,6 +1,6 @@
 {
   "name": "taranitup",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Personal website for Taran Pierce.",
   "main": "index.js",
   "scripts": {
