@@ -50,8 +50,9 @@ export default function Index() {
                     }
                   ]}
                   alt={'Taran Pierce'}
-                  height={280}
-                  width={280}
+                  // height={280}
+                  // width={280}
+                  dataSrc={`taran.jpg`}
                 />
               </div>
             </div>
