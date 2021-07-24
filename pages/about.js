@@ -26,25 +26,25 @@ export default function About() {
             />
             <h3>NextJS - <a href={`https://nextjs.org/`} target={`_blank`} rel={`noopener`}>https://nextjs.org/</a></h3>
             <ul>
-              <li>Static Site Generation</li>
-              <li>Next Link</li>
+              <li><strong>Static Site Generation</strong> - takes all your pages and will generate a set of static html/css/js for you. So long as your site does not rely on dynamic data, though you can still use dyanmic data with SSG, this is type of site can be hosted on a CDN and cached for even faster delivery.</li>
+              <li><strong>Next Link</strong> - this is how the preloading of the page was taken care of. A really nice feature built-in to Next.js. A component that you use to wrap your anchor tags in. When Next.js sees this component, it will preload the linked page after the current page the client is viewing has downloaded. Making the next page they navigate to load almost instantly.</li>
             </ul>
             <h3>AWS - <a href={`https://aws.amazon.com/`} target={`_blank`} rel={`noopener`}>https://aws.amazon.com/</a></h3>
             <ul>
-              <li>Route 53</li>
-              <li>S3</li>
-              <li>CodeBuild</li>
-              <li>Cloud Front</li>
+              <li><strong>Route 53</strong> - Amazons highly available cloud Domain Name System web service. I used this service to set up a hosted zone for the domain name I purchased. Within Route 53 I was able to set up nameservers, A records and CNAMEs for domains that I am able to manage the DNS for. Pretty sure you can also buy domains from within here but I purchase mine else where.</li>
+              <li><strong>S3</strong></li>
+              <li><strong>CodeBuild</strong></li>
+              <li><strong>Cloud Front</strong></li>
             </ul>
             <h3>Google Analytics - <a href={`https://analytics.google.com/`} target={`_blank`} rel={`noopener`}>https://analytics.google.com/</a></h3>
             <ul>
-              <li>Google Analytics</li>
-              <li>Google Tag Manager</li>
+              <li><strong>Google Analytics</strong></li>
+              <li><strong>Google Tag Manager</strong></li>
             </ul>
             <h3>Cloudinary - <a href={`https://cloudinary.com/`} target={`_blank`} rel={`noopener`}>https://cloudinary.com/</a></h3>
             <ul>
-              <li>Google Analytics</li>
-              <li>Google Tag Manager</li>
+              <li><strong>Google Analytics</strong></li>
+              <li><strong>Google Tag Manager</strong></li>
             </ul>
           </Container>
         </section>

@@ -25,7 +25,7 @@ export default function Nextjs() {
               content={`What parts of Nextjs are being used?`}
             />
             <Text
-              content={`Nextjs is very flexible and has a lot of features. As I go through and implement them, I'll talk a bit about each one.`}
+              content={`Nextjs is very flexible and has a lot of features. As I go through and implement them, I'll talk a bit about each one. It is actually really easy to set up and they have pretty good documentation for a basic setup.`}
             />
           </Container>
         </section>
@@ -36,7 +36,7 @@ export default function Nextjs() {
               content={`Static Site Generation`}
             />
             <Text
-              content={`With the latest Nextjs this comes built in with zero configuration so long as you have a simple static site. Simply build then export your project and Nextjs creates an /out/ for you with your static site.`}
+              content={`With the latest Nextjs this comes built in with zero configuration so long as you have a simple static site. Simply build then export your project using their built in commands and Next.js creates an /out/ for you with your static site.`}
             />
           </Container>
         </section>
