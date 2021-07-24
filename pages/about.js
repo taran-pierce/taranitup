@@ -41,6 +41,11 @@ export default function About() {
               <li>Google Analytics</li>
               <li>Google Tag Manager</li>
             </ul>
+            <h3>Cloudinary - <a href={`https://cloudinary.com/`} target={`_blank`} rel={`noopener`}>https://cloudinary.com/</a></h3>
+            <ul>
+              <li>Google Analytics</li>
+              <li>Google Tag Manager</li>
+            </ul>
           </Container>
         </section>
      </Layout>

@@ -18,14 +18,6 @@ export default function AppImage({
 
   const version = process.env.NEXT_PUBLIC_VERSION;
 
-  const [isProd, setIsProd] = useState(false);
-
-  useEffect(() => {
-    const isProduction = process.env.NODE_ENV === 'production';
-
-    setIsProd(isProduction);
-  }, []);
-
   return (
     <>
       <CloudinaryContext 
@@ -39,7 +31,7 @@ export default function AppImage({
           width={width}
           alt={alt}
           dataSrc={dataSrc}
-          secure={isProd}
+          secure={true}
         >
           {options && options.map( (option, index) => <Transformation key={`${cloudName}-${index}`} {...option} />)}
         </Image>

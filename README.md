@@ -2,6 +2,7 @@
 A personal project for Taran Pierce to test out new things.
 
 ## Requirments
+- nodejs
 - nextjs
 
 ## Install
@@ -15,12 +16,10 @@ A personal project for Taran Pierce to test out new things.
   - CodeBuild - merges to master build application
   - S3 - artifact from CodeBuild is moved to S3 bucket
   - Route 53 - routing DNS to S3 bucket
+  - Cloud Front - SSL and caching
 - Google Tag Manager - analytics
+- Cloudinary - Content Delivery Network
 
 ### Todo
 - Setup unit tests with Cypres or Jest
-- Hook up to Cloudinary for CDN
 - Hook up headless CMS
-- Set up CloudFront
-- Set up https after setting up CloudFront
-- Set up caching
