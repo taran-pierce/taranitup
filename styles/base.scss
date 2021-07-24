@@ -15,38 +15,6 @@ html, body {
   }
 }
 
-h1, h2,
-h3, h4,
-h5, h6,
-p, ul,
-ol, a {
-  margin: 0 0 .5rem 0;
-}
-
-h1, h2 {
-  font-family: $font-family-heading;
-}
-
-h1 {
-  font-size: 5rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 500;
-}
-
-h3 {
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-
-p, a, ol, ul, li {
-  font-size: 1.8rem;
-  font-weight: 400;
-}
-
 section {
   border: 1px solid $black;
 }

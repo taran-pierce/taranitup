@@ -1,14 +1,13 @@
 {
   "name": "taranitup",
-  "version": "0.2.16",
-  "description": "Personal website for Taran Pierce.",
+  "version": "1.0.0",
+  "description": "Personal website for Taran Pierce. ",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export",
-    "test": "jest"
+    "export": "next build && next export"
   },
   "repository": {
     "type": "git",
