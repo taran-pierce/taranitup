@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .navigation {
   list-style-type: none;
   margin: 0;
@@ -7,4 +9,12 @@
 
 .item {
   padding: .5rem;
+}
+
+.link {
+  color: $black;
+  font-family: $font-family-heading;
+  font-weight: bold;
+  text-decoration: none;
+  padding: .4rem;
 }

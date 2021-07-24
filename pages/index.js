@@ -40,11 +40,6 @@ export default function Index() {
                       fetchFormat: 'auto',
                     },
                     {
-                      crop: 'crop',
-                      gravity: 'face',
-                      radius: 'max',
-                    },
-                    {
                       effect: 'outline:2',
                       color: 'black',
                     }
@@ -64,19 +59,19 @@ export default function Index() {
             content={`Just a place for me to do some messing around with stuff. This site is hooked up to various technologies and I will explain how each of them are hooked up.`}
           />
           <Text
-            content={`Right now this site is very simple but is using nodejs running Nextjs to leverage their Static Site Generation. I'm using services from AWS like CodeBuild to grab the repo and build the application. Moving the artifact it creates to an S3 bucket where I have the DNS managed from Route 53.`}
+            content={`Right now this site is very simple but is using Nodejs and using the Nextjs react framework to leverage their Static Site Generation. I'm using services from AWS like CodeBuild to grab the repo and build the application. Moving the artifact it creates to an S3 bucket where I have the DNS managed from Route 53.`}
           />
           <Text
-            content={`Also hooked up GTM using react-gtm-module. Really easy to use and setup.`}
+            content={`For analytic tracking I'm using GTM implemented with react-gtm-module. Really easy to use and setup.`}
           />
           <Text
-            content={`On merges to master the code is automatically built and deployed to update the live site.`}
+            content={`On merged pull request to master the code is automatically built using CodeBuild and the artifact it creates is moved to an S3 bucket.`}
           />
           <Text
-            content={`Also have Cloud Front set up in order to get an SSL. Need to customize the caching to work properly now.`}
+            content={`Cloud Front is set up in order to get an SSL and take advantage of caching.`}
           />
           <Text
-            content={`Added a command to CodeBuild to automatically queue up an invalidation task for Cloud Front.`}
+            content={`Added a command to CodeBuild to automatically queue up a cache invalidation task for Cloud Front.`}
           />
           <Text
             content={`Now hooked up to Cloudinary to get media from a CDN.`}

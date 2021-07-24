@@ -9,15 +9,15 @@ export default function Navigation({activePage}) {
       href: '/about',
     },
     {
-      name: 'aws',
+      name: 'AWS',
       href: '/aws',
     },
     {
-      name: 'nextjs',
+      name: 'NextJS',
       href: '/nextjs',
     },
     {
-      name: 'cloudinary',
+      name: 'Cloudinary',
       href: '/cloudinary',
     },
   ];
@@ -28,7 +28,7 @@ export default function Navigation({activePage}) {
         <ul className={styles.navigation}>
           <li className={styles.item}>
             <Link href={`/`}>
-              <a>TP</a>
+              <a className={styles.link}>TP</a>
             </Link>
           </li>
           {links && links.map((link) => {
@@ -44,7 +44,7 @@ export default function Navigation({activePage}) {
                 className={styles.item}
               >
                 <Link href={href}>
-                  <a>
+                  <a className={styles.link}>
                     {name}
                   </a>
                 </Link>
