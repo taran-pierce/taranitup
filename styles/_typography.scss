@@ -1,6 +1,76 @@
-// TODO move these to self hosted to cut down on HTTP requests
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;700&family=Zilla+Slab:wght@500;700&display=swap');
+/* m-plus-rounded-1c-100 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'M PLUS Rounded 1c';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../public/fonts/m-plus-rounded-1c-v10-latin-100.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-100.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-100.svg#MPLUSRounded1c') format('svg'); /* Legacy iOS */
+}
 
+/* m-plus-rounded-1c-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'M PLUS Rounded 1c';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../public/fonts/m-plus-rounded-1c-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-regular.svg#MPLUSRounded1c') format('svg'); /* Legacy iOS */
+}
+/* m-plus-rounded-1c-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'M PLUS Rounded 1c';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../public/fonts/m-plus-rounded-1c-v10-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/m-plus-rounded-1c-v10-latin-700.svg#MPLUSRounded1c') format('svg'); /* Legacy iOS */
+}
+
+/* zilla-slab-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../public/fonts/zilla-slab-v6-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../public/fonts/zilla-slab-v6-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/zilla-slab-v6-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/zilla-slab-v6-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/zilla-slab-v6-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/zilla-slab-v6-latin-500.svg#ZillaSlab') format('svg'); /* Legacy iOS */
+}
+
+/* zilla-slab-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../public/fonts/zilla-slab-v6-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../public/fonts/zilla-slab-v6-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../public/fonts/zilla-slab-v6-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../public/fonts/zilla-slab-v6-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../public/fonts/zilla-slab-v6-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../public/fonts/zilla-slab-v6-latin-700.svg#ZillaSlab') format('svg'); /* Legacy iOS */
+}
 
 h1, h2,
 h3, h4,
