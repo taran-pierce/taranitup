@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '../header';
 import styles from './layout.module.scss';
@@ -10,9 +9,8 @@ import TagManager from 'react-gtm-module';
 export default function Layout({
     children,
     title,
+    pathname,
   }) {
-
-  const { pathname } = useRouter();
 
   const canonical = `http://www.taranitup.com${pathname}`;
 
@@ -38,7 +36,7 @@ export default function Layout({
         <meta name="robots" content="index, follow" />
         <meta name="Author" content="Taran Pierce" />
         <meta name="description" content="Taran Pierce aka William Taran Pierce, personal website for testing fun stuff." />
-        <meta name="keywords" content="Taran Pierce, William Taran Pierce, taranitup, Nodejs, Nextjs, AWS, CodeBuild, Route 53, S3, Cloud Front" />
+        <meta name="keywords" content="Taran Pierce, taranitup, Software Engineer, William Taran Pierce, taranitup, Nodejs, Nextjs, AWS, CodeBuild, Route 53, S3, Cloud Front, Contentful" />
         <link rel="preconnect" href="//res.cloudinary.com" />
         <link rel="dns-prefetch" href="//res.cloudinary.com" />
       </Head>
