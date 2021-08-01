@@ -20,6 +20,10 @@ export default function Navigation({activePage}) {
       name: 'Cloudinary',
       href: '/cloudinary',
     },
+    {
+      name: 'Contentful',
+      href: '/contentful',
+    },
   ];
 
   return (

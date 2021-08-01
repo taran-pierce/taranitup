@@ -6,7 +6,16 @@ import Container from '../components/container';
 import AppImage from '../components/image';
 import Block from '../components/block';
 
-export default function Index() {
+const contentful = require('contentful');
+
+function Index({
+  componentData,
+}) {
+  const [
+    title,
+    pageComponents,
+    route,
+  ] = componentData;
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -39,7 +48,10 @@ export default function Index() {
 
   return (
     <>
-      <Layout title={`Home`}>
+      <Layout 
+        title={title.pageTitle}
+        pathname={route.pathname}  
+      >
         <section>
           <Container>
             <div style={{
@@ -96,17 +108,22 @@ export default function Index() {
         </section>
         <section>
           <Container>
-            <Block>
-              <Text
-                content={`I've been doing some type of web development for over 10 years now focusing on the front end. For this site though, I am focusing less on the visual appeal and more so on learning and gaining experience working with technologies that I am less familiar with. Though at some point I may make it look a little fancier.`}
-              />
-              <Text
-                content={`So this is just a place for me to do some messing around with stuff.`}
-              />
-              <Text
-                content={`Right now this site is very simple but as I get time I will implement some more complex features just to test them out.`}
-              />
-            </Block>
+            {pageComponents.components.map(component => {
+              // TODO do checks in here and pass nodeType to markup
+              const {
+                fields,
+              } = component || {};
+
+              const {
+                bodyCopy,
+              } = fields || {};
+
+              return (
+                <>
+                  {bodyCopy.content.map(copy => <Text content={copy.content[0].value} />)}
+                </>
+              );
+            })}
           </Container>
         </section>
         <section>
@@ -135,3 +152,29 @@ export default function Index() {
     </>
   );
 };
+
+Index.getInitialProps = async (ctx) => {
+  const client = contentful.createClient({
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_TOKEN,
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE,
+  });
+
+  const componentData = [];
+
+  await client.getEntry('5td3EthQyEbrg4ZnGG14k')
+    .then((entry) => {
+      // console.log(entry);
+
+      Object.keys(entry.fields).forEach(field => field != 'metaData' ? componentData.push({ [field]: entry.fields[field]}) : null);
+    })
+    .catch(console.error);
+
+  const pathname = '/';
+
+  return {
+    pathname,
+    componentData,
+  };
+};
+
+export default Index;
