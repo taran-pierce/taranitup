@@ -4,10 +4,7 @@ import {
   array,
 } from 'prop-types';
 
-export default function Text({content, markup}) {
-
-  console.log({content})
-  
+export default function Text({content, markup}) {  
   const TextContent = () => React.createElement(markup, {
     children: content,
   });
