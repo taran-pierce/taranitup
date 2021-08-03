@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   string,
+  array,
 } from 'prop-types';
 
-export default function Text({content, markup}) {
-  
+export default function Text({content, markup}) {  
   const TextContent = () => React.createElement(markup, {
     children: content,
   });
@@ -21,6 +21,6 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  content: string.isRequired,
+  content: array.isRequired,
   markup: string,
 };

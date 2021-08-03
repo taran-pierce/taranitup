@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import React, { 
+  useEffect, 
+  useState,
+ } from 'react';
 import Layout from '../components/layouts';
 import Text from '../components/text';
 import Container from '../components/container';
 import AppImage from '../components/image';
-import Block from '../components/block';
+import RichText from '../components/richText';
 
 const contentful = require('contentful');
 
@@ -64,11 +66,11 @@ function Index({
               }}>
                 <Text
                   markup={`h1`}
-                  content={`Taran Pierce`} 
+                  content={[`Taran Pierce`]} 
                 />
                 <Text
                   markup={`h2`}
-                  content={`Welcome to taranitup.com`}
+                  content={[`Welcome to taranitup.com`]}
                 />
                 <ul>
                   <li>
@@ -106,48 +108,28 @@ function Index({
             </div>
           </Container>
         </section>
-        <section>
-          <Container>
-            {pageComponents.components.map(component => {
-              // TODO do checks in here and pass nodeType to markup
-              const {
-                fields,
-              } = component || {};
+        {pageComponents.components.map((component) => {
+          const {
+            fields,
+            sys,
+          } = component || {};
 
-              const {
-                bodyCopy,
-              } = fields || {};
+          const {
+            bodyCopy,
+          } = fields || {};
 
-              return (
-                <>
-                  {bodyCopy.content.map(copy => <Text content={copy.content[0].value} />)}
-                </>
-              );
-            })}
-          </Container>
-        </section>
-        <section>
-          <Container>
-            <Block>
-              <Text
-                markup={`h3`}
-                content={`How does it work?`}
-              />
-              <Text
-                content={`You can take a look at the About page, don't worry it isn't about me it is about what technologies I am using to create this site. Just click the link below, it shouldn' take long to load the next page cause I've already done it while you were reading this.`}
-              />
-              <Text
-                content={`Don't worry, you will learn more about how that works on the about page if you want to find out. On the about page you will find a general overview of each different feature and some links to their sites so you can check them out or use them yourself.`}
-              />
-              <Text
-                content={`Despite requiring a credit card just to signup for AWS services, everything on here is either completely free or a free service so long as you stay under certain limits. Limits that are quite easy to stay under unless you are getting some major traffic to your site.`}
-              />
-              <Link href={`/about`}>
-                <a>About how the site works</a>
-              </Link>
-            </Block>
-          </Container>
-        </section>
+          return (
+            <section key={sys.id}>
+              <Container>
+                {bodyCopy.content.map((copy, index) => {
+                  return (
+                    <RichText copy={copy} key={`${copy}-${index}`} />
+                  );
+                })}
+              </Container>
+            </section>
+          );
+        })}
       </Layout>
     </>
   );
@@ -163,16 +145,11 @@ Index.getInitialProps = async (ctx) => {
 
   await client.getEntry('5td3EthQyEbrg4ZnGG14k')
     .then((entry) => {
-      // console.log(entry);
-
       Object.keys(entry.fields).forEach(field => field != 'metaData' ? componentData.push({ [field]: entry.fields[field]}) : null);
     })
     .catch(console.error);
 
-  const pathname = '/';
-
   return {
-    pathname,
     componentData,
   };
 };
