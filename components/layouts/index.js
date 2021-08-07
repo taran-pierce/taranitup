@@ -17,7 +17,7 @@ export default function Layout({
   // setup GTM and add pageId from router to dataLayer
   useEffect(() => {
     const tagManagerArgs = {
-      gtmId: 'G-NJGEK61WEJ',
+      gtmId: 'GTM-MQHG2S9',
       dataLayer: {
         pageId: pathname,
       }
