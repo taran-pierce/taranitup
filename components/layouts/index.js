@@ -14,18 +14,6 @@ export default function Layout({
 
   const canonical = `http://www.taranitup.com${pathname}`;
 
-  // setup GTM and add pageId from router to dataLayer
-  useEffect(() => {
-    const tagManagerArgs = {
-      gtmId: 'GTM-MQHG2S9',
-      dataLayer: {
-        pageId: pathname,
-      }
-    };
-    
-    TagManager.initialize(tagManagerArgs);
-  }, []);
-
   return (
     <>
       <Head>
@@ -39,6 +27,12 @@ export default function Layout({
         <meta name="keywords" content="Taran Pierce, taranitup, Software Engineer, William Taran Pierce, taranitup, Nodejs, Nextjs, AWS, CodeBuild, Route 53, S3, Cloud Front, Contentful" />
         <link rel="preconnect" href="//res.cloudinary.com" />
         <link rel="dns-prefetch" href="//res.cloudinary.com" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RC2EMVBFTN"></script>
+        <script dangerouslySetInnerHTML={{__html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RC2EMVBFTN');`}}>
+        </script>
       </Head>
       <Header />
       <main className={styles.container}>
