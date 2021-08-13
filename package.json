@@ -24,7 +24,7 @@
     "@contentful/rich-text-types": "^15.1.0",
     "cloudinary-react": "^1.7.0",
     "contentful": "^8.4.2",
-    "next": "^10.2.3",
+    "next": "^11.1.0",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
