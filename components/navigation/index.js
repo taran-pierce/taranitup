@@ -31,8 +31,11 @@ export default function Navigation({activePage}) {
       <nav>
         <ul className={styles.navigation}>
           <li className={styles.item}>
-            <Link href={`/`}>
-              <a className={styles.link}>TP</a>
+            <Link
+              href={`/`}
+              className={styles.link}
+            >
+              TP
             </Link>
           </li>
           {links && links.map((link) => {
@@ -45,12 +48,12 @@ export default function Navigation({activePage}) {
               <li 
                 key={name}
                 className={activePage === name.toLowerCase() ? styles.activePage : null}
-                className={styles.item}
               >
-                <Link href={href}>
-                  <a className={styles.link}>
-                    {name}
-                  </a>
+                <Link
+                  href={href}
+                  className={styles.link}
+                >
+                  {name}
                 </Link>
               </li>
             );

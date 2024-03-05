@@ -79,6 +79,12 @@ function Index({
                   <li>
                     <a href={`https://github.com/taran-pierce`} rel={`noopener`} target={`_blank`}>GitHub</a>
                   </li>
+                  <li>
+                    <a href={`https://www.taranpierce.com`} rel={`noopener`} target={`_blank`}>taranpierce.com</a>
+                  </li>
+                  <li>
+                    <a href={`https://photos.taranpierce.com`} rel={`noopener`} target={`_blank`}>Photos</a>
+                  </li>
                 </ul>
               </div>
               <div style={{
