@@ -8,7 +8,7 @@ A personal project for Taran Pierce to test out new things.
 ## Install
 - run `npm i`
 - for dev mode: `npm run dev`
-- create static build: `npm run export`
+- create static build: `npm run build`
 
 ### Features
 - Nextjs - Static Site Generation

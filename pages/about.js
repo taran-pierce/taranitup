@@ -22,7 +22,7 @@ export default function About() {
           <Container>
             <Text
               markup={`h2`}
-              content={`What is it using?`}
+              content={`What is it using you ask?`}
             />
             <h3>NextJS - <a href={`https://nextjs.org/`} target={`_blank`} rel={`noopener`}>https://nextjs.org/</a></h3>
             <ul>
