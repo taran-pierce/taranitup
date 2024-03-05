@@ -1,13 +1,12 @@
 {
   "name": "taranitup",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Personal website for Taran Pierce. ",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && next export"
+    "start": "next start"
   },
   "engines": {
     "node": "18.x"
