@@ -14,7 +14,7 @@ export default function Contentful() {
           <Container>
             <Text
               markup={`h1`}
-              content={`Contentful`} 
+              content={[`Contentful`]}
             />
           </Container>
         </section>
@@ -22,10 +22,10 @@ export default function Contentful() {
           <Container>
             <Text
               markup={`h2`}
-              content={`Headless CMS`}
+              content={[`Headless CMS`]}
             />
             <Text
-              content={`Cloud-native, API-first, and endlessly extensible. Personalize, control and manage content for your site via a headless CMS with a nice GUI.`}
+              content={[`Cloud-native, API-first, and endlessly extensible. Personalize, control and manage content for your site via a headless CMS with a nice GUI.`]}
             />
           </Container>
         </section>

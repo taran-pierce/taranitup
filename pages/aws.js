@@ -14,7 +14,7 @@ export default function Aws() {
           <Container>
             <Text
               markup={`h1`}
-              content={`AWS`} 
+              content={[`AWS`]}
             />
           </Container>
         </section>
@@ -22,10 +22,10 @@ export default function Aws() {
           <Container>
             <Text
               markup={`h2`}
-              content={`What are the different services and how were they set up?`}
+              content={[`What are the different services and how were they set up?`]}
             />
             <Text
-              content={`There are a few things being used and some were tricker than others to set up. So let's go through them.`}
+              content={[`There are a few things being used and some were tricker than others to set up. So let's go through them.`]}
             />
           </Container>
         </section>
@@ -33,10 +33,10 @@ export default function Aws() {
           <Container>
             <Text 
               markup={`h3`}
-              content={`Route 53`}
+              content={[`Route 53`]}
             />
             <Text
-              content={`A highly available and scalable cloud Domain Name System (DNS) web service.`}
+              content={[`A highly available and scalable cloud Domain Name System (DNS) web service.`]}
             />
           </Container>
         </section>
@@ -44,10 +44,10 @@ export default function Aws() {
           <Container>
             <Text 
               markup={`h3`}
-              content={`S3`}
+              content={[`S3`]}
             />
             <Text
-              content={`Cloud Object Storage.`}
+              content={[`Cloud Object Storage.`]}
             />
           </Container>
         </section>
@@ -55,10 +55,21 @@ export default function Aws() {
           <Container>
             <Text 
               markup={`h3`}
-              content={`CodeBuild`}
+              content={[`CodeBuild`]}
             />
             <Text
-              content={`A fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy.`}
+              content={[`A fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy.`]}
+            />
+          </Container>
+        </section>
+        <section>
+          <Container>
+            <Text 
+              markup={`h3`}
+              content={[`CloudFront`]}
+            />
+            <Text
+              content={[`Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.`]}
             />
           </Container>
         </section>

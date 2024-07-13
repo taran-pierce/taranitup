@@ -14,7 +14,7 @@ export default function Cloudinary() {
           <Container>
             <Text
               markup={`h1`}
-              content={`Cloudinary`} 
+              content={[`Cloudinary`]}
             />
           </Container>
         </section>
@@ -22,10 +22,10 @@ export default function Cloudinary() {
           <Container>
             <Text
               markup={`h2`}
-              content={`CDN`}
+              content={[`CDN`]}
             />
             <Text
-              content={`Store, transform, optimize and deliver all your media assets.`}
+              content={[`Store, transform, optimize and deliver all your media assets.`]}
             />
           </Container>
         </section>
@@ -33,10 +33,10 @@ export default function Cloudinary() {
           <Container>
             <Text 
               markup={`h3`}
-              content={`Image hosting`}
+              content={[`Image hosting`]}
             />
             <Text
-              content={`The entire one image that is on the site so far is coming from Cloudinary's CDN.`}
+              content={[`The entire one image that is on the site so far is coming from Cloudinary's CDN.`]}
             />
           </Container>
         </section>
@@ -44,10 +44,10 @@ export default function Cloudinary() {
           <Container>
             <Text 
               markup={`h3`}
-              content={`Image Manipulation`}
+              content={[`Image Manipulation`]}
             />
             <Text
-              content={`The image is much larger and I am using Cloudinary to scale the image down to 280px by 280px. Then another transformation to crop and focus more on the face of the image. As well as delivering the nextgen format of the image.`}
+              content={[`The image is much larger and I am using Cloudinary to scale the image down to 280px by 280px. Then another transformation to crop and focus more on the face of the image. As well as delivering the nextgen format of the image.`]}
             />
           </Container>
         </section>
