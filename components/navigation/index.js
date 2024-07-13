@@ -13,7 +13,7 @@ export default function Navigation({activePage}) {
       href: '/aws',
     },
     {
-      name: 'NextJS',
+      name: 'Next.js',
       href: '/nextjs',
     },
     {
