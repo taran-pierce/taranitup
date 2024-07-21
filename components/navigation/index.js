@@ -1,6 +1,19 @@
-import React from 'react';
-import Link from 'next/link';
-import styles from './navigation.module.scss';
+import React, {
+  useState,
+  useEffect,
+} from 'react';
+
+import MobileNavigation from './components/MobileNavigation';
+import DesktopNavigation from './components/DesktopNavigation';
+
+import styled from 'styled-components';
+
+import {
+  Box,
+  Link,
+  Container,
+} from '@mui/material';
+import useWindowDimensions from '../../utils/useWindowDimensions';
 
 export default function Navigation({activePage}) {
   const links = [
@@ -26,40 +39,33 @@ export default function Navigation({activePage}) {
     },
   ];
 
+  const {
+    height,
+    width,
+  } = useWindowDimensions();
+
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    setIsMobile(width <= 767)
+  }, [width])
+
   return (
     <>
-      <nav>
-        <ul className={styles.navigation}>
-          <li className={styles.item}>
-            <Link
-              href={`/`}
-              className={styles.link}
-            >
-              TP
-            </Link>
-          </li>
-          {links && links.map((link) => {
-            const {
-              name,
-              href,
-            } = link;
-
-            return (
-              <li 
-                key={name}
-                className={activePage === name.toLowerCase() ? styles.activePage : null}
-              >
-                <Link
-                  href={href}
-                  className={styles.link}
-                >
-                  {name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <Box
+        component="nav"
+        sx={{
+          textAlign: isMobile ? 'right' : 'left',
+        }}
+      >
+        {isMobile ? 
+          <MobileNavigation
+            links={links}
+          /> : 
+          <DesktopNavigation
+            links={links}
+          />}
+      </Box>
     </>
   );
 };
