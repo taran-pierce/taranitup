@@ -1,5 +1,4 @@
 import {
-  // useEffect,
   useState,
 } from 'react';
 
@@ -14,9 +13,8 @@ import styled from 'styled-components';
 const Navigation = styled.ul`
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
 const ListItem = styled.li`
@@ -34,17 +32,26 @@ export default function MobileNavigation({
 
   return (
     <>
-      <Button onClick={toggleDrawer(true)}>Menu</Button>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
-      {links && links.map((link, key) => {
-        return (
-          <ListItem key={key}>
-            <Link
-              href={link.href}
-            >{link.name}</Link>
-          </ListItem>
-        )
-      })}
+      <Button
+        onClick={toggleDrawer(true)}
+        size='large'
+        variant='outlined'
+      >Menu</Button>
+      <Drawer
+        open={open}
+        onClose={toggleDrawer(false)}
+      >
+        <Navigation>
+          {links && links.map((link, key) => {
+            return (
+              <ListItem key={key}>
+                <Link
+                  href={link.href}
+                >{link.name}</Link>
+              </ListItem>
+            )
+          })}
+        </Navigation>
       </Drawer>
     </>
   );

@@ -3,16 +3,16 @@ import React, {
   useEffect,
 } from 'react';
 
+import Logo from './components/Logo';
 import MobileNavigation from './components/MobileNavigation';
 import DesktopNavigation from './components/DesktopNavigation';
 
-import styled from 'styled-components';
-
 import {
   Box,
-  Link,
   Container,
+  Grid,
 } from '@mui/material';
+
 import useWindowDimensions from '../../utils/useWindowDimensions';
 
 export default function Navigation({activePage}) {
@@ -40,7 +40,6 @@ export default function Navigation({activePage}) {
   ];
 
   const {
-    height,
     width,
   } = useWindowDimensions();
 
@@ -53,18 +52,38 @@ export default function Navigation({activePage}) {
   return (
     <>
       <Box
-        component="nav"
-        sx={{
-          textAlign: isMobile ? 'right' : 'left',
-        }}
+        component='nav'
       >
-        {isMobile ? 
-          <MobileNavigation
-            links={links}
-          /> : 
-          <DesktopNavigation
-            links={links}
-          />}
+        <Container>
+          <Grid
+            container
+            spacing={2}
+          >
+            <Grid
+              item
+              sx={{
+                flexGrow: 1,
+              }}
+            >
+              <Logo />
+            </Grid>
+            <Grid
+              item
+              sx={{
+                flexGrow: 1,
+                textAlign: isMobile ? 'right' : 'left',
+              }}
+            >
+              {isMobile ?
+                <MobileNavigation
+                  links={links}
+                /> : 
+                <DesktopNavigation
+                  links={links}
+                />}
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
     </>
   );

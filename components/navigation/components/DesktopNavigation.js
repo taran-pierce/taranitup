@@ -15,15 +15,13 @@ const Navigation = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
 `;
 
 const ListItem = styled.li`
-  padding: .5rem;
+  flex-grow: 1;
 `;
 
 export default function MainNavigation({
-  activePage,
   links,
 }) {
   return (
