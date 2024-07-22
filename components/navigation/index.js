@@ -53,6 +53,8 @@ export default function Navigation({activePage}) {
     <>
       <Box
         component='nav'
+        data-testid="navigation"
+        role="navigation"
       >
         <Container>
           <Grid
