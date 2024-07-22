@@ -5,8 +5,6 @@ import Document, {
   NextScript
 } from 'next/document';
 
-import CssBaseline from '@mui/material/CssBaseline';
-
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -19,7 +17,6 @@ class MyDocument extends Document {
       <Html lang="en-US" charSet="UTF-8">
         <Head />
         <body>
-          <CssBaseline />
           <Main />
           <NextScript />
         </body>

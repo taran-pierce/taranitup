@@ -20,7 +20,7 @@ export default function Cloudinary() {
           }}
         >
           <Typography
-            component={`h1`}
+            variant={`h1`}
           >Cloudinary</Typography>
         </Box>
         <Box
@@ -30,7 +30,7 @@ export default function Cloudinary() {
           }}
         >
           <Typography
-            component={`h2`}
+            variant={`h2`}
           >CDN</Typography>
           <Typography>Store, transform, optimize and deliver all your media assets.</Typography>
         </Box>
@@ -41,7 +41,7 @@ export default function Cloudinary() {
           }}
         >
           <Typography 
-            component={`h3`}
+            variant={`h3`}
           >Image Hosting</Typography>
           <Typography>The entire one image that is on the site so far is coming from Cloudinary's CDN.</Typography>
         </Box>
@@ -52,7 +52,7 @@ export default function Cloudinary() {
           }}
         >
           <Typography 
-            component={`h3`}
+            variant={`h3`}
           >Image Manipulation</Typography>
           <Typography>The image is much larger and I am using Cloudinary to scale the image down to 280px by 280px. Then another transformation to crop and focus more on the face of the image. As well as delivering the nextgen format of the image.</Typography>
         </Box>
