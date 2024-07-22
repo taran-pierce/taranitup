@@ -17,7 +17,7 @@ export default function Aws() {
           component="section"
         >
           <Typography
-            component={`h1`}
+            variant={`h1`}
           >AWS</Typography>
         </Box>
         <Box
@@ -27,7 +27,7 @@ export default function Aws() {
           }}
         >
           <Typography
-            component={`h2`}
+            variant={`h2`}
           >What are the different services and how were they set up?</Typography>
           <Typography>There are a few things being used and some were tricker than others to set up. So let's go through them.</Typography>
         </Box>
@@ -38,7 +38,7 @@ export default function Aws() {
           }}
         >
           <Typography 
-            component={`h3`}
+            variant={`h3`}
           >Route 53</Typography>
           <Typography>A highly available and scalable cloud Domain Name System (DNS) web service.</Typography>
         </Box>
@@ -49,7 +49,7 @@ export default function Aws() {
           }}
         >
           <Typography 
-            component={`h3`}
+            variant={`h3`}
           >S3</Typography>
           <Typography>Cloud Object Storage.</Typography>
         </Box>
@@ -60,7 +60,7 @@ export default function Aws() {
           }}
         >
           <Typography 
-            component={`h3`}
+            variant={`h3`}
           >CodeBuild</Typography>
           <Typography>A fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy.</Typography>
         </Box>
@@ -71,7 +71,7 @@ export default function Aws() {
           }}
         >
           <Typography 
-            component={`h3`}
+            variant={`h3`}
           >CloudFront</Typography>
           <Typography>Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.</Typography>
         </Box>

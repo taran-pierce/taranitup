@@ -7,8 +7,14 @@ import {
   Box,
   Container,
   ThemeProvider,
-  createTheme,
 } from '@mui/material';
+
+import CssBaseline from '@mui/material/CssBaseline';
+
+import {
+  createTheme,
+  responsiveFontSizes,
+} from '@mui/material/styles';
 
 export default function Layout({
     children,
@@ -18,13 +24,11 @@ export default function Layout({
 
   const canonical = `http://www.taranitup.com${pathname}`;
 
-  const theme = createTheme({
+  let theme = createTheme({
     typography: {
-      htmlFontSize: 20,
-      fontSize: 20,
+      htmlFontSize: 16,
       h1: {
         fontStyle: 'bold',
-        fontSize: '2.8rem',
       },
       h2: {
         fontStyle: 'bold',
@@ -44,9 +48,9 @@ export default function Layout({
       subtitle1: {
         fontSize: 12,
       },
-      // body1: {
-      //   fontWeight: 500,
-      // },
+      body1: {
+        fontWeight: 500,
+      },
       button: {
         fontStyle: 'italic',
       },
@@ -59,6 +63,8 @@ export default function Layout({
       },
     },
   });
+
+  theme = responsiveFontSizes(theme);
 
   return (
     <>
@@ -82,6 +88,7 @@ export default function Layout({
       <ThemeProvider
         theme={theme}
       >
+        <CssBaseline />
         <Header />
         <Container
           sx={{

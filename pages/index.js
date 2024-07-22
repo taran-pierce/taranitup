@@ -64,10 +64,10 @@ function Index({
               md={6}
             >
               <Typography
-                  component="h1"
+                  variant="h1"
                 >Taran Pierce</Typography>
                 <Typography
-                  component="h2"
+                  variant="h2"
                   sx={{
                     marginBottom: '1rem',
                   }}

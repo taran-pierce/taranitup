@@ -20,7 +20,7 @@ export default function Contentful() {
           }}
         >
           <Typography
-            component={`h1`}
+            variant={`h1`}
           >Contentful</Typography>
         </Box>
         <Box
@@ -30,7 +30,7 @@ export default function Contentful() {
           }}
         >
           <Typography
-            component={`h2`}
+            variant={`h2`}
           >Headless CMS</Typography>
           <Typography>Cloud-native, API-first, and endlessly extensible. Personalize, control and manage content for your site via a headless CMS with a nice GUI.</Typography>
         </Box>
