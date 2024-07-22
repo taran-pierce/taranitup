@@ -13,6 +13,7 @@ import {
   Paper,
   Typography,
   Card,
+  CardHeader,
   List,
   ListItem,
   Link,
@@ -21,6 +22,8 @@ import {
   InboxIcon,
   ListItemText,
   DraftsIcon,
+  MoreVertIcon,
+  IconButton,
 } from '@mui/material';
 
 const contentful = require('contentful');
@@ -81,8 +84,16 @@ function Index({
                       marginBottom: '1rem',
                     }}
                   >Welcome to taranitup.com</Typography>
-                  <Typography>Just a random place for random things, if that is what you are after then you have made it to the right place!</Typography>
+                  <Typography
+                    sx={{
+                      marginBottom: '1rem',
+                    }}
+                  >Just a random place for random things, if that is what you are after then you have made it to the right place!</Typography>
                 <Card>
+                  <CardHeader 
+                    title="Other Websites"
+                    subheader="Just some links to other websites of mine or with information about me."
+                  />
                   <List>
                     {links.map((link, key) =>
                       <ListItem>
@@ -134,6 +145,9 @@ function Index({
             <Box
               component="section"
               key={key}
+              sx={{
+                marginTop: '2rem',
+              }}
             >
               <Container>
                 {bodyCopy.content.map((copy, index) => {
