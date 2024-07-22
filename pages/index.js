@@ -1,14 +1,40 @@
-import React, { 
-  useEffect, 
-  useState,
- } from 'react';
+import React from 'react';
 import Layout from '../components/layouts';
-import Text from '../components/text';
-import Container from '../components/container';
-import AppImage from '../components/image';
 import RichText from '../components/richText';
 
+import {
+  Box,
+  Grid,
+  Typography,
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  List,
+  ListItem,
+  Link,
+} from '@mui/material';
+
 const contentful = require('contentful');
+
+const links = [
+  {
+    href: 'https://www.linkedin.com/in/taran-pierce-4b6b5721/',
+    name: 'LinkedIn',
+  },
+  {
+    href: 'https://github.com/taran-pierce',
+    name: 'GitHub',
+  },
+  {
+    href: 'https://www.taranpierce.com',
+    name: 'taranpierce.com',
+  },
+  {
+    href: 'https://photos.taranpierce.com',
+    name: 'Photos',
+  },
+];
 
 function Index({
   componentData,
@@ -19,102 +45,73 @@ function Index({
     route,
   ] = componentData;
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  const getWindowSize = () => {
-    const { innerWidth } = window || {};
-
-    return innerWidth;
-  };
-
-  // find initial viewport size
-  useEffect(() => {
-    setIsMobile(getWindowSize() < 768);
-  }, []);
-
-  // watch for window resize and reset isMobile
-  useEffect(() => {
-    let timeout;
-
-    // add resize listner
-    window.addEventListener('resize', (e) => {
-      if (timeout) {
-        window.cancelAnimationFrame(timeout);
-      }
-
-      timeout = window.requestAnimationFrame(() => {
-        setIsMobile(getWindowSize() < 768);
-      });
-    }, false);
-  }, []);
-
   return (
     <>
       <Layout 
         title={title.pageTitle}
         pathname={route.pathname}  
       >
-        <section>
-          <Container>
-            <div style={{
-              display: 'flex',
-              flexDirection: isMobile ? 'column-reverse' : 'row',
-              alignItems: 'center',
-            }}>
-              <div style={{
-                width: isMobile ? 'auto' : '50%',
-              }}>
-                <Text
-                  markup={`h1`}
-                  content={[`Taran Pierce`]} 
-                />
-                <Text
-                  markup={`h2`}
-                  content={[`Welcome to taranitup.com`]}
-                />
-                <ul>
-                  <li>
-                    <a href={`https://www.linkedin.com/in/taran-pierce-4b6b5721/`} rel={`noopener`} target={`_blank`}>LinkedIn</a>
-                  </li>
-                  <li>
-                    <a href={`https://github.com/taran-pierce`} rel={`noopener`} target={`_blank`}>GitHub</a>
-                  </li>
-                  <li>
-                    <a href={`https://www.taranpierce.com`} rel={`noopener`} target={`_blank`}>taranpierce.com</a>
-                  </li>
-                  <li>
-                    <a href={`https://photos.taranpierce.com`} rel={`noopener`} target={`_blank`}>Photos</a>
-                  </li>
-                </ul>
-              </div>
-              <div style={{
-                width: isMobile ? 'auto' : '50%',
-              }}>
-                <AppImage 
-                  imageName={'taranitup/taran.jpg'}
-                  cloudName={'tpierce36'}
-                  options={[
-                    {
-                      crop: 'scale',
-                      height: '280',
-                      width: '280',
-                      fetchFormat: 'auto',
-                    },
-                    {
-                      effect: 'outline:2',
-                      color: 'black',
-                    }
-                  ]}
-                  alt={'Taran Pierce'}
-                  height={280}
-                  width={280}
-                  dataSrc={`taran.jpg`}
-                />
-              </div>
-            </div>
-          </Container>
-        </section>
-        {pageComponents.components.map((component) => {
+        <Box
+          component="section"
+          sx={{
+            flexGrow: 1,
+          }}
+        >
+          <Grid container spacing={2}>
+            <Grid 
+              item
+              xs={12}
+              md={6}
+            >
+              <Typography
+                  component="h1"
+                >Taran Pierce</Typography>
+                <Typography
+                  component="h2"
+                  sx={{
+                    marginBottom: '1rem',
+                  }}
+                >Welcome to taranitup.com</Typography>
+                <Typography
+                  sx={{
+                    marginBottom: '1rem',
+                  }}
+                >Just a random place for random things, if that is what you are after then you have made it to the right place!</Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+            >
+              <Card>
+                <CardActionArea>
+                  <CardMedia 
+                    component="img"
+                    height="300"
+                    image="https://res.cloudinary.com/tpierce36/image/upload/c_scale,f_auto,w_400/v1626535757/taranitup/taran.jpg"
+                    alt="Taran Pierce"
+                  />
+                </CardActionArea>
+                <CardContent>
+                  <List>
+                    {links.map((link, key) =>
+                      <ListItem
+                        key={key}
+                      >
+                        <Link
+                          href={link.href} 
+                          target="_blank" 
+                          rel="noopener"
+                        >{link.name}</Link>
+                      </ListItem>
+                    )}
+                  </List>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+        </Box>
+        {pageComponents.components.map((component, key) => {
           const {
             fields,
             sys,
@@ -125,15 +122,19 @@ function Index({
           } = fields || {};
 
           return (
-            <section key={sys.id}>
-              <Container>
-                {bodyCopy.content.map((copy, index) => {
-                  return (
-                    <RichText copy={copy} key={`${copy}-${index}`} />
-                  );
-                })}
-              </Container>
-            </section>
+            <Box
+              component="section"
+              key={key}
+              sx={{
+                marginTop: '2rem',
+              }}
+            >
+              {bodyCopy.content.map((copy, index) => {
+                return (
+                  <RichText copy={copy} key={`${copy}-${index}`} />
+                );
+              })}
+            </Box>
           );
         })}
       </Layout>

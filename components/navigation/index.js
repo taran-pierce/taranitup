@@ -1,6 +1,19 @@
-import React from 'react';
-import Link from 'next/link';
-import styles from './navigation.module.scss';
+import React, {
+  useState,
+  useEffect,
+} from 'react';
+
+import Logo from './components/Logo';
+import MobileNavigation from './components/MobileNavigation';
+import DesktopNavigation from './components/DesktopNavigation';
+
+import {
+  Box,
+  Container,
+  Grid,
+} from '@mui/material';
+
+import useWindowDimensions from '../../utils/useWindowDimensions';
 
 export default function Navigation({activePage}) {
   const links = [
@@ -26,40 +39,52 @@ export default function Navigation({activePage}) {
     },
   ];
 
+  const {
+    width,
+  } = useWindowDimensions();
+
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    setIsMobile(width <= 767)
+  }, [width])
+
   return (
     <>
-      <nav>
-        <ul className={styles.navigation}>
-          <li className={styles.item}>
-            <Link
-              href={`/`}
-              className={styles.link}
+      <Box
+        component='nav'
+      >
+        <Container>
+          <Grid
+            container
+            spacing={2}
+          >
+            <Grid
+              item
+              sx={{
+                flexGrow: 1,
+              }}
             >
-              TP
-            </Link>
-          </li>
-          {links && links.map((link) => {
-            const {
-              name,
-              href,
-            } = link;
-
-            return (
-              <li 
-                key={name}
-                className={activePage === name.toLowerCase() ? styles.activePage : null}
-              >
-                <Link
-                  href={href}
-                  className={styles.link}
-                >
-                  {name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+              <Logo />
+            </Grid>
+            <Grid
+              item
+              sx={{
+                flexGrow: 1,
+                textAlign: isMobile ? 'right' : 'left',
+              }}
+            >
+              {isMobile ?
+                <MobileNavigation
+                  links={links}
+                /> : 
+                <DesktopNavigation
+                  links={links}
+                />}
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
     </>
   );
 };

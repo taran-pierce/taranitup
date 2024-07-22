@@ -1,8 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
-import { NextScript } from 'next/document';
+import { Main, NextScript } from 'next/document';
 import Header from '../header';
-import styles from './layout.module.scss';
+
+import {
+  Box,
+  Container,
+  ThemeProvider,
+  createTheme,
+} from '@mui/material';
 
 export default function Layout({
     children,
@@ -11,6 +17,48 @@ export default function Layout({
   }) {
 
   const canonical = `http://www.taranitup.com${pathname}`;
+
+  const theme = createTheme({
+    typography: {
+      htmlFontSize: 20,
+      fontSize: 20,
+      h1: {
+        fontStyle: 'bold',
+        fontSize: '2.8rem',
+      },
+      h2: {
+        fontStyle: 'bold',
+      },
+      h3: {
+        fontStyle: 'bold',
+      },
+      h4: {
+        fontStyle: 'bold',
+      },
+      h5: {
+        fontStyle: 'bold',
+      },
+      h6: {
+        fontSize: 20,
+      },
+      subtitle1: {
+        fontSize: 12,
+      },
+      // body1: {
+      //   fontWeight: 500,
+      // },
+      button: {
+        fontStyle: 'italic',
+      },
+    },
+    spacing: 8,
+    palette: {
+      primary: {
+        main: '#333',
+        dark: '#000'
+      },
+    },
+  });
 
   return (
     <>
@@ -31,10 +79,20 @@ export default function Layout({
           gtag('config', 'G-RC2EMVBFTN');`}}>
         </NextScript>
       </Head>
-      <Header />
-      <main className={styles.container}>
-        {children}
-      </main>
+      <ThemeProvider
+        theme={theme}
+      >
+        <Header />
+        <Container
+          sx={{
+            spacing: 1,
+          }}
+        >
+          <Box component="main">
+            {children}
+          </Box>
+        </Container>
+      </ThemeProvider>
     </>
   );
 };
