@@ -1,25 +1,17 @@
-import {
-  Button,
-} from '@mui/material';
+import Link from 'next/link';
 
 import styled from 'styled-components';
 
-const LogoDiv = styled.div`
+const StyledLogo = styled.div`
   font-weight: bold;
 `;
 
 export default function Logo() {
   return (
     <>
-      <LogoDiv>
-        <Button
-          size='large'
-          sx={{
-            fontWeight: 'bold',
-          }}
-          href="/"
-        >TaranItUp</Button>
-      </LogoDiv>
+      <StyledLogo>
+        <Link href="/">taranitup.com</Link>
+      </StyledLogo>
     </>
   );
 }

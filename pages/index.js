@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from '../components/layouts';
-import AppImage from '../components/image';
 import RichText from '../components/richText';
 
 import {
   Box,
-  Container,
   Grid,
   Typography,
   Card,
-  CardHeader,
+  CardActionArea,
+  CardMedia,
+  CardContent,
   List,
   ListItem,
   Link,
@@ -57,37 +57,48 @@ function Index({
             flexGrow: 1,
           }}
         >
-          <Container>
-            <Grid container spacing={2}>
-              <Grid 
-                item
-                xs={12}
-                md={6}
-              >
+          <Grid container spacing={2}>
+            <Grid 
+              item
+              xs={12}
+              md={6}
+            >
+              <Typography
+                  component="h1"
+                >Taran Pierce</Typography>
                 <Typography
-                    component="h1"
-                  >Taran Pierce</Typography>
-                  <Typography
-                    component="h2"
-                    sx={{
-                      marginBottom: '1rem',
-                    }}
-                  >Welcome to taranitup.com</Typography>
-                  <Typography
-                    sx={{
-                      marginBottom: '1rem',
-                    }}
-                  >Just a random place for random things, if that is what you are after then you have made it to the right place!</Typography>
-                <Card>
-                  <CardHeader 
-                    title="Other Websites"
-                    subheader="Just some links to other websites of mine or with information about me."
+                  component="h2"
+                  sx={{
+                    marginBottom: '1rem',
+                  }}
+                >Welcome to taranitup.com</Typography>
+                <Typography
+                  sx={{
+                    marginBottom: '1rem',
+                  }}
+                >Just a random place for random things, if that is what you are after then you have made it to the right place!</Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+            >
+              <Card>
+                <CardActionArea>
+                  <CardMedia 
+                    component="img"
+                    height="300"
+                    image="https://res.cloudinary.com/tpierce36/image/upload/c_scale,f_auto,w_400/v1626535757/taranitup/taran.jpg"
+                    alt="Taran Pierce"
                   />
+                </CardActionArea>
+                <CardContent>
                   <List>
                     {links.map((link, key) =>
-                      <ListItem>
+                      <ListItem
+                        key={key}
+                      >
                         <Link
-                          key={key}
                           href={link.href} 
                           target="_blank" 
                           rel="noopener"
@@ -95,30 +106,10 @@ function Index({
                       </ListItem>
                     )}
                   </List>
-                </Card>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={6}
-              >
-                <AppImage 
-                  imageName={'taranitup/taran.jpg'}
-                  cloudName={'tpierce36'}
-                  options={[
-                    {
-                      crop: 'scale',
-                      width: '400',
-                      fetchFormat: 'auto',
-                    }
-                  ]}
-                  alt={'Taran Pierce'}
-                  width={300}
-                  dataSrc={`taran.jpg`}
-                />
-              </Grid>
+                </CardContent>
+              </Card>
             </Grid>
-          </Container>
+          </Grid>
         </Box>
         {pageComponents.components.map((component, key) => {
           const {
@@ -138,13 +129,11 @@ function Index({
                 marginTop: '2rem',
               }}
             >
-              <Container>
-                {bodyCopy.content.map((copy, index) => {
-                  return (
-                    <RichText copy={copy} key={`${copy}-${index}`} />
-                  );
-                })}
-              </Container>
+              {bodyCopy.content.map((copy, index) => {
+                return (
+                  <RichText copy={copy} key={`${copy}-${index}`} />
+                );
+              })}
             </Box>
           );
         })}

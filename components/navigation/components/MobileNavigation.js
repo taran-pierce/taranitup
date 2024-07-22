@@ -1,9 +1,12 @@
-import {
+import React, {
   useState,
 } from 'react';
 
+// leverage Next Link in the main navigation for quick routing
+// cant quite seem to combine MUI Link and Next Link though
+import Link from 'next/link';
+
 import {
-  Link,
   Drawer,
   Button,
 } from '@mui/material';

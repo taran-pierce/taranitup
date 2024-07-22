@@ -1,12 +1,13 @@
-import React, {
-  useState,
-} from 'react';
+import React from 'react';
+
+// leverage Next Link in the main navigation for quick routing
+// cant quite seem to combine MUI Link and Next Link though
+import Link from 'next/link';
 
 import styled from 'styled-components';
 
 import {
   Box,
-  Link,
   Container,
 } from '@mui/material';
 
@@ -21,7 +22,7 @@ const ListItem = styled.li`
   flex-grow: 1;
 `;
 
-export default function MainNavigation({
+export default function DesktopNavigation({
   links,
 }) {
   return (
@@ -31,7 +32,7 @@ export default function MainNavigation({
           <Navigation>
             {links && links.map((link, key) => {
               return (
-                <ListItem>
+                <ListItem key={key}>
                   <Link
                     href={link.href}
                   >{link.name}</Link>
