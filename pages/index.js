@@ -6,16 +6,43 @@ import Layout from '../components/layouts';
 import AppImage from '../components/image';
 import RichText from '../components/richText';
 
-import { useWindowDimensions } from '../utils/useWindowDimensions';
-
 import {
   Box,
   Container,
   Grid,
+  Paper,
   Typography,
+  Card,
+  List,
+  ListItem,
+  Link,
+  ListItemButton,
+  ListItemIcon,
+  InboxIcon,
+  ListItemText,
+  DraftsIcon,
 } from '@mui/material';
 
 const contentful = require('contentful');
+
+const links = [
+  {
+    href: 'https://www.linkedin.com/in/taran-pierce-4b6b5721/',
+    name: 'LinkedIn',
+  },
+  {
+    href: 'https://github.com/taran-pierce',
+    name: 'GitHub',
+  },
+  {
+    href: 'https://www.taranpierce.com',
+    name: 'taranpierce.com',
+  },
+  {
+    href: 'https://photos.taranpierce.com',
+    name: 'Photos',
+  },
+];
 
 function Index({
   componentData,
@@ -25,17 +52,6 @@ function Index({
     pageComponents,
     route,
   ] = componentData;
-
-  const {
-    width,
-  } = useWindowDimensions();
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  // find initial viewport size
-  useEffect(() => {
-    setIsMobile(width <= 768);
-  }, [width]);
 
   return (
     <>
@@ -57,25 +73,29 @@ function Index({
                 md={6}
               >
                 <Typography
-                  component="h1"
-                >Taran Pierce</Typography>
-                <Typography
-                  component="h2"
-                >Welcome to taranitup.com</Typography>
-                <ul>
-                  <li>
-                    <a href={`https://www.linkedin.com/in/taran-pierce-4b6b5721/`} rel={`noopener`} target={`_blank`}>LinkedIn</a>
-                  </li>
-                  <li>
-                    <a href={`https://github.com/taran-pierce`} rel={`noopener`} target={`_blank`}>GitHub</a>
-                  </li>
-                  <li>
-                    <a href={`https://www.taranpierce.com`} rel={`noopener`} target={`_blank`}>taranpierce.com</a>
-                  </li>
-                  <li>
-                    <a href={`https://photos.taranpierce.com`} rel={`noopener`} target={`_blank`}>Photos</a>
-                  </li>
-                </ul>
+                    component="h1"
+                  >Taran Pierce</Typography>
+                  <Typography
+                    component="h2"
+                    sx={{
+                      marginBottom: '1rem',
+                    }}
+                  >Welcome to taranitup.com</Typography>
+                  <Typography>Just a random place for random things, if that is what you are after then you have made it to the right place!</Typography>
+                <Card>
+                  <List>
+                    {links.map((link, key) =>
+                      <ListItem>
+                        <Link
+                          key={key}
+                          href={link.href} 
+                          target="_blank" 
+                          rel="noopener"
+                        >{link.name}</Link>
+                      </ListItem>
+                    )}
+                  </List>
+                </Card>
               </Grid>
               <Grid
                 item
@@ -88,25 +108,19 @@ function Index({
                   options={[
                     {
                       crop: 'scale',
-                      height: '280',
-                      width: '280',
+                      width: '400',
                       fetchFormat: 'auto',
-                    },
-                    {
-                      effect: 'outline:2',
-                      color: 'black',
                     }
                   ]}
                   alt={'Taran Pierce'}
-                  height={280}
-                  width={280}
+                  width={300}
                   dataSrc={`taran.jpg`}
                 />
               </Grid>
             </Grid>
           </Container>
         </Box>
-        {pageComponents.components.map((component) => {
+        {pageComponents.components.map((component, key) => {
           const {
             fields,
             sys,
@@ -119,6 +133,7 @@ function Index({
           return (
             <Box
               component="section"
+              key={key}
             >
               <Container>
                 {bodyCopy.content.map((copy, index) => {

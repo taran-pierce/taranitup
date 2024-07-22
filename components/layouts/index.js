@@ -19,6 +19,38 @@ export default function Layout({
   const canonical = `http://www.taranitup.com${pathname}`;
 
   const theme = createTheme({
+    typography: {
+      htmlFontSize: 20,
+      fontSize: 20,
+      h1: {
+        fontStyle: 'bold',
+        fontSize: '2.8rem',
+      },
+      h2: {
+        fontStyle: 'bold',
+      },
+      h3: {
+        fontStyle: 'bold',
+      },
+      h4: {
+        fontStyle: 'bold',
+      },
+      h5: {
+        fontStyle: 'bold',
+      },
+      h6: {
+        fontSize: 20,
+      },
+      subtitle1: {
+        fontSize: 12,
+      },
+      // body1: {
+      //   fontWeight: 500,
+      // },
+      button: {
+        fontStyle: 'italic',
+      },
+    },
     spacing: 8,
     palette: {
       primary: {
