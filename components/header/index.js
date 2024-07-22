@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
 export default function Header({children}) {
   return (
     <>
-      <StyledHeader>
+      <StyledHeader data-testid="header">
         <Navigation activePage={'home'} />
       </StyledHeader>
     </>
