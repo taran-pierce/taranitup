@@ -1,7 +1,11 @@
 import React from 'react';
 import Layout from '../components/layouts';
-import Text from '../components/text';
-import Container from '../components/container';
+
+import {
+  Container,
+  Typography,
+  Box,
+} from '@mui/material';
 
 export default function Aws() {
 
@@ -10,69 +14,80 @@ export default function Aws() {
      <Layout 
        title={`AWS`}
       >
-        <section>
+        <Box
+          component="section"
+        >
           <Container>
-            <Text
-              markup={`h1`}
-              content={[`AWS`]}
-            />
+            <Typography
+              component={`h1`}
+            >AWS</Typography>
           </Container>
-        </section>
-        <section>
+        </Box>
+        <Box
+          component="section"
+          sx={{
+            marginBottom: '1rem',
+          }}
+        >
           <Container>
-            <Text
-              markup={`h2`}
-              content={[`What are the different services and how were they set up?`]}
-            />
-            <Text
-              content={[`There are a few things being used and some were tricker than others to set up. So let's go through them.`]}
-            />
+            <Typography
+              component={`h2`}
+            >What are the different services and how were they set up?</Typography>
+            <Typography>There are a few things being used and some were tricker than others to set up. So let's go through them.</Typography>
           </Container>
-        </section>
-        <section>
+        </Box>
+        <Box
+          component="section"
+          sx={{
+            marginBottom: '1rem',
+          }}
+        >
           <Container>
-            <Text 
-              markup={`h3`}
-              content={[`Route 53`]}
-            />
-            <Text
-              content={[`A highly available and scalable cloud Domain Name System (DNS) web service.`]}
-            />
+            <Typography 
+              component={`h3`}
+            >Route 53</Typography>
+            <Typography>A highly available and scalable cloud Domain Name System (DNS) web service.</Typography>
           </Container>
-        </section>
-        <section>
+        </Box>
+        <Box
+          component="section"
+          sx={{
+            marginBottom: '1rem',
+          }}
+        >
           <Container>
-            <Text 
-              markup={`h3`}
-              content={[`S3`]}
-            />
-            <Text
-              content={[`Cloud Object Storage.`]}
-            />
+            <Typography 
+              component={`h3`}
+            >S3</Typography>
+            <Typography>Cloud Object Storage.</Typography>
           </Container>
-        </section>
-        <section>
+        </Box>
+        <Box
+          component="section"
+          sx={{
+            marginBottom: '1rem',
+          }}
+        >
           <Container>
-            <Text 
-              markup={`h3`}
-              content={[`CodeBuild`]}
-            />
-            <Text
-              content={[`A fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy.`]}
-            />
+            <Typography 
+              component={`h3`}
+            >CodeBuild</Typography>
+            <Typography>A fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy.</Typography>
           </Container>
-        </section>
-        <section>
+        </Box>
+        <Box
+          component="section"
+          sx={{
+            marginBottom: '1rem',
+          }}
+        >
           <Container>
-            <Text 
-              markup={`h3`}
-              content={[`CloudFront`]}
-            />
-            <Text
-              content={[`Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.`]}
-            />
+            <Typography 
+              component={`h3`}
+            >CloudFront</Typography>
+            <Typography>Amazon CloudFront is a content delivery network (CDN) service built for high performance, security, and developer convenience.</Typography>
           </Container>
-        </section>
+        </Box>
      </Layout>
     </>
   );
