@@ -1,7 +1,4 @@
-import React, { 
-  useEffect, 
-  useState,
- } from 'react';
+import React from 'react';
 import Layout from '../components/layouts';
 import AppImage from '../components/image';
 import RichText from '../components/richText';
@@ -10,20 +7,12 @@ import {
   Box,
   Container,
   Grid,
-  Paper,
   Typography,
   Card,
   CardHeader,
   List,
   ListItem,
   Link,
-  ListItemButton,
-  ListItemIcon,
-  InboxIcon,
-  ListItemText,
-  DraftsIcon,
-  MoreVertIcon,
-  IconButton,
 } from '@mui/material';
 
 const contentful = require('contentful');

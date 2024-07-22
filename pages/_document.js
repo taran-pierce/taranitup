@@ -16,7 +16,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" charSet="UTF-8">
+      <Html lang="en-US" charSet="UTF-8">
         <Head />
         <body>
           <CssBaseline />
