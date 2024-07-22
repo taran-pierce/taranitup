@@ -56,12 +56,7 @@ export default function Layout({
             spacing: 1,
           }}
         >
-          <Box
-            component="main"
-            sx={{
-              bgcolor: 'primary.main',
-            }}
-          >
+          <Box component="main">
             {children}
           </Box>
         </Container>

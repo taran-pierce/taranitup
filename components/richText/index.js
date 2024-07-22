@@ -4,15 +4,16 @@ import {
   MARKS,
  } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Text from '../text';
+
+import { Typography } from '@mui/material';
 
 // more options: https://www.npmjs.com/package/@contentful/rich-text-react-renderer
 const options = {
   renderMark: {
-    [MARKS.BOLD]: text => <Text content={text} markup={`strong`}>{text}</Text>,
+    [MARKS.BOLD]: text => <Typography component="b">{text}</Typography>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text content={children}/>,
+    [BLOCKS.PARAGRAPH]: (node, children) => <Typography component='p'>{children}</Typography>,
   },
 };
 

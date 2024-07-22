@@ -3,10 +3,17 @@ import React, {
   useState,
  } from 'react';
 import Layout from '../components/layouts';
-import Text from '../components/text';
-import Container from '../components/container';
 import AppImage from '../components/image';
 import RichText from '../components/richText';
+
+import { useWindowDimensions } from '../utils/useWindowDimensions';
+
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+} from '@mui/material';
 
 const contentful = require('contentful');
 
@@ -19,34 +26,16 @@ function Index({
     route,
   ] = componentData;
 
+  const {
+    width,
+  } = useWindowDimensions();
+
   const [isMobile, setIsMobile] = useState(false);
-
-  const getWindowSize = () => {
-    const { innerWidth } = window || {};
-
-    return innerWidth;
-  };
 
   // find initial viewport size
   useEffect(() => {
-    setIsMobile(getWindowSize() < 768);
-  }, []);
-
-  // watch for window resize and reset isMobile
-  useEffect(() => {
-    let timeout;
-
-    // add resize listner
-    window.addEventListener('resize', (e) => {
-      if (timeout) {
-        window.cancelAnimationFrame(timeout);
-      }
-
-      timeout = window.requestAnimationFrame(() => {
-        setIsMobile(getWindowSize() < 768);
-      });
-    }, false);
-  }, []);
+    setIsMobile(width <= 768);
+  }, [width]);
 
   return (
     <>
@@ -54,24 +43,25 @@ function Index({
         title={title.pageTitle}
         pathname={route.pathname}  
       >
-        <section>
+        <Box
+          component="section"
+          sx={{
+            flexGrow: 1,
+          }}
+        >
           <Container>
-            <div style={{
-              display: 'flex',
-              flexDirection: isMobile ? 'column-reverse' : 'row',
-              alignItems: 'center',
-            }}>
-              <div style={{
-                width: isMobile ? 'auto' : '50%',
-              }}>
-                <Text
-                  markup={`h1`}
-                  content={[`Taran Pierce`]} 
-                />
-                <Text
-                  markup={`h2`}
-                  content={[`Welcome to taranitup.com`]}
-                />
+            <Grid container spacing={2}>
+              <Grid 
+                item
+                xs={12}
+                md={6}
+              >
+                <Typography
+                  component="h1"
+                >Taran Pierce</Typography>
+                <Typography
+                  component="h2"
+                >Welcome to taranitup.com</Typography>
                 <ul>
                   <li>
                     <a href={`https://www.linkedin.com/in/taran-pierce-4b6b5721/`} rel={`noopener`} target={`_blank`}>LinkedIn</a>
@@ -86,10 +76,12 @@ function Index({
                     <a href={`https://photos.taranpierce.com`} rel={`noopener`} target={`_blank`}>Photos</a>
                   </li>
                 </ul>
-              </div>
-              <div style={{
-                width: isMobile ? 'auto' : '50%',
-              }}>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={6}
+              >
                 <AppImage 
                   imageName={'taranitup/taran.jpg'}
                   cloudName={'tpierce36'}
@@ -110,10 +102,10 @@ function Index({
                   width={280}
                   dataSrc={`taran.jpg`}
                 />
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </Container>
-        </section>
+        </Box>
         {pageComponents.components.map((component) => {
           const {
             fields,
@@ -125,7 +117,9 @@ function Index({
           } = fields || {};
 
           return (
-            <section key={sys.id}>
+            <Box
+              component="section"
+            >
               <Container>
                 {bodyCopy.content.map((copy, index) => {
                   return (
@@ -133,7 +127,7 @@ function Index({
                   );
                 })}
               </Container>
-            </section>
+            </Box>
           );
         })}
       </Layout>
